@@ -1,8 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { AiFillStar } from "react-icons/ai";
+
+
+
 
 const HomeMultipleClasses = () => {
     const [classes, setClasses] = useState([]);
+    const [randomClass, setRandomClass] = useState(0);
 
 
     useEffect(() => {
@@ -15,28 +20,39 @@ const HomeMultipleClasses = () => {
             .then(res => res.json())
             .then(data => setClasses(data))
             .catch(err => console.log(err))
+
     }, [])
+
+    useEffect(() => {
+        let randomClasses = Math.floor(Math.random() * classes.length);
+        setRandomClass(randomClasses);
+    }, [classes])
+
 
 
     return (
-        <div>
-
-            <div className='flex'>
-                {classes && classes.map(({ className, asset, url }, index) => {
+        <div className='flex overflow-x-scroll overflow-hidden gap-8'>
+            {
+                classes?.map(({ asset, url, className }, index) => {
                     return (
-                        <div className='p-4'>
-                            <div className=''>
-                                <img src={classes[index].asset.url} alt="classes" className='rounded-l-lg rounded-tr-lg w-[200px] h-[133px]  absolute' />
-                            </div>
-                            <div className=' '>
-                                <button className='bg-[#f1c40e] font-medium rounded-tr-lg rounded-bl-lg text-[12px] w-[200px] mt-24 p-4 relative'>{classes[index].className}</button>
+                        <div className=''>
+                            <div key={index} className='w-[150px] h-[150px] rounded-l-lg rounded-tr-lg'
+                                style={{
+                                    backgroundImage: `url(${classes[index].asset.url})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}>
+                                <div>
+                                    <button className=' bg-[#f1c40e] truncate w-full p-1 mt-[103px] rounded-tr-lg'>{className}</button>
+                                    <p className='bg-[#f1c40e] rounded-bl-lg flex justify-evenly p-1'><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></p>
+                                </div>
                             </div>
                         </div>
                     )
-                })}
-            </div>
+                }
+                )
+            }
         </div>
     )
 }
-
 export default HomeMultipleClasses
