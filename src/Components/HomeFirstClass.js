@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { AiFillStar } from "react-icons/ai";
 
 const HomeFirstClass = () => {
 
     const [firstClass, setFirstClass] = useState([]);
+
 
     useEffect(() => {
         fetch(
@@ -25,7 +27,7 @@ const HomeFirstClass = () => {
                         <img src={firstClass.asset && firstClass.asset.url} alt="classes" className='rounded-xl' />
                     </div>
                     <div className='relative'>
-                        <button className='bg-[#f1c40e] font-medium rounded-tr-lg rounded-bl-lg text-[12px] w-[200px] mt-[194.7px] p-4 relative'>{firstClass.className} </button>
+                        <button className='bg-[#f1c40e] font-medium rounded-tr-lg rounded-bl-lg text-[12px] mt-[122px] p-4 relative'>{firstClass.className} <p className='flex pt-2 justify-evenly'><AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /></p> </button>
                     </div>
                 </div>
             </div>
