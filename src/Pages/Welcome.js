@@ -4,6 +4,7 @@ import welcomecenter from '../assets/Img/welcomecentercrop.jpg'
 import { Link } from 'react-router-dom'
 
 const Welcome = () => {
+
     return (
         <div>
             <div className='absolute'>
