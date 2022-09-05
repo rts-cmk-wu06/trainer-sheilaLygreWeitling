@@ -33,7 +33,7 @@ const HeaderBurgerMenu = () => {
                                     <button>Search</button>
                                 </li>
                             </Link>
-                            <Link to="/About">
+                            <Link to="/Schedule">
                                 <li className=" my-8 ">
                                     <button>My Schedule</button>
                                 </li>
