@@ -27,7 +27,7 @@ const HeaderBurgerMenu = () => {
                                     <button>Home</button>
                                 </li>
                             </Link>
-                            <Link to="/About">
+                            <Link to="/Search">
                                 <li className=" my-8 ">
                                     <button>Search</button>
                                 </li>
