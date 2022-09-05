@@ -31,7 +31,7 @@ const HomeMultipleClasses = () => {
 
 
     return (
-        <div className='flex overflow-x-scroll overflow-hidden gap-8'>
+        <div className='flex overflow-x-scroll overflow-hidden gap-8 p-5'>
             {
                 classes?.map(({ asset, url, className }, index) => {
                     return (
