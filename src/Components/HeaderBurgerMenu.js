@@ -4,6 +4,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const HeaderBurgerMenu = () => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -42,7 +43,6 @@ const HeaderBurgerMenu = () => {
                                     <button>Log in</button>
                                 </li>
                             </Link>
-
                         </ul>
                     </div>
                 </section>

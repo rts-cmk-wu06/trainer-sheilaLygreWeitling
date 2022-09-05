@@ -1,8 +1,11 @@
 import Welcome from "./Pages/Welcome";
 import Home from "./Pages/Home";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Search from "./Pages/Search";
 import LoginPage from "./Pages/LoginPage";
+import SingleClass from "./Pages/SingleClass";
+
+
 
 function App() {
 
@@ -12,7 +15,8 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Search" element={<Search />} />
-        <Route path="LoginPage" element={<LoginPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/Class/:id" element={<SingleClass />} />
       </Routes>
     </div>
   );
