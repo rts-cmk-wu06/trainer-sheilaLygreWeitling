@@ -6,11 +6,13 @@ import HeaderBurgerMenu from '../Components/HeaderBurgerMenu'
 const SingleClass = () => {
     return (
         <div>
-            <div className='flex justify-between p-4'>
+            {/*             <div className='flex justify-between p-4 '>
                 <BackArrow />
                 <HeaderBurgerMenu />
+            </div> */}
+            <div>
+                <SingleClassDetail />
             </div>
-            <SingleClassDetail />
         </div>
     )
 }

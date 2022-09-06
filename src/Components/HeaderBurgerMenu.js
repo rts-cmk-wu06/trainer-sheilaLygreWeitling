@@ -13,7 +13,7 @@ const HeaderBurgerMenu = () => {
         <div>
             <nav>
                 <section className=' text-[24px]'>
-                    <div onClick={() => setIsNavOpen((prev) => !prev)} className=' text-[#9e9e9e] text-xl'>
+                    <div onClick={() => setIsNavOpen((prev) => !prev)} className=' text-[#9e9e9e] text-[24px]'>
                         <HiMenuAlt3 />
                     </div>
                     <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
