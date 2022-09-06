@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Fuse from 'fuse.js';
 import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const SearchFunc = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
+
     useEffect(() => {
-        fetch('http://localhost:4000/api/v1/classes',
+        fetch('http://localhost:4000/api/v1/classes/',
             {
                 method: 'GET',
             })
@@ -61,22 +63,24 @@ const SearchFunc = () => {
                         <ul>
                             {
                                 classSearchResults.slice(0.2).map(({ classDay, classDescription, className, trainer, id }, index) => (
-                                    <li key={index} className='border-[#d4d4d4] border-[1px] rounded-full p-4 pl-12'>
-                                        <a key={index} href="">
-                                            <ul>
-                                                <li>{classDay}</li>
-                                                <li className='truncate'>{classDescription}</li>
-                                                <li className='truncate'>{className}</li>
-                                            </ul>
-                                        </a>
-                                    </li>
+                                    <Link to={`/class/${id}`}>
+                                        <li key={index} className='border-[#d4d4d4] border-[1px] rounded-full p-4 pl-12'>
+                                            <a key={index} href="">
+                                                <ul>
+                                                    <li>{classDay}</li>
+                                                    <li className='truncate'>{classDescription}</li>
+                                                    <li className='truncate'>{className}</li>
+                                                </ul>
+                                            </a>
+                                        </li>
+                                    </Link>
                                 ))
                             }
                         </ul>
                     )
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

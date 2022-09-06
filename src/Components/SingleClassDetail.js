@@ -15,7 +15,6 @@ const SingleClassDetail = () => {
             .then(res => res.json())
             .then(data => setGroups(data))
             .catch(err => console.log(err))
-
     }, [id])
 
     useEffect(() => {
@@ -25,9 +24,7 @@ const SingleClassDetail = () => {
             .then(res => res.json())
             .then(data => setTrainer(data))
             .catch(err => console.log(err))
-
     }, [id])
-
 
     return (
         <div className='flex'>
