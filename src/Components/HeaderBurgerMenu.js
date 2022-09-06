@@ -23,22 +23,22 @@ const HeaderBurgerMenu = () => {
                         ><CgClose />
                         </div>
                         <ul className="flex flex-col items-center justify-between min-h-[250px] ">
-                            <Link to="/Home">
+                            <Link to="/home">
                                 <li className=" my-8 ">
                                     <button>Home</button>
                                 </li>
                             </Link>
-                            <Link to="/Search">
+                            <Link to="/search">
                                 <li className=" my-8 ">
                                     <button>Search</button>
                                 </li>
                             </Link>
-                            <Link to="/Schedule">
+                            <Link to="/schedule">
                                 <li className=" my-8 ">
                                     <button>My Schedule</button>
                                 </li>
                             </Link>
-                            <Link to="/LoginPage">
+                            <Link to="/loginPage">
                                 <li className=" my-8 ">
                                     <button>Log in</button>
                                 </li>
