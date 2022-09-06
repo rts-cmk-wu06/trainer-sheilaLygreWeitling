@@ -1,22 +1,19 @@
+import usePagination from '@mui/material/usePagination/usePagination';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { AiFillStar } from "react-icons/ai";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, } from 'react-router-dom';
+import SingleClassDetail from './SingleClassDetail';
+import Stars from './Stars';
 
 
 const HomeMultipleClasses = () => {
     const [classes, setClasses] = useState([]);
     const [randomClass, setRandomClass] = useState(0);
 
-    let { id } = useParams();
-
-
     useEffect(() => {
         fetch(
             'http://localhost:4000/api/v1/classes',
-            {
-                method: 'GET',
-            }
         )
             .then(res => res.json())
             .then(data => setClasses(data))
@@ -30,14 +27,14 @@ const HomeMultipleClasses = () => {
     }, [classes])
 
 
-
     return (
         <div >
-            <Link to={`/Class/${id}`}>
-                <div className='flex overflow-x-scroll overflow-hidden gap-8 p-5'>
-                    {
-                        classes?.map(({ asset, url, className }, index) => {
-                            return (
+
+            <div className='flex overflow-x-scroll overflow-hidden gap-8 p-5'>
+                {
+                    classes?.map(({ asset, url, className, id }, index) => {
+                        return (
+                            <Link to={`/class/${id}`}>
                                 <div className=''>
                                     <div key={index} className='w-[150px] h-[150px] rounded-l-lg rounded-tr-lg'
                                         style={{
@@ -47,16 +44,17 @@ const HomeMultipleClasses = () => {
                                         }}>
                                         <div>
                                             <button className=' bg-[#f1c40e] truncate w-full p-1 mt-[103px] rounded-tr-lg'>{className}</button>
-                                            <p className='bg-[#f1c40e] rounded-bl-lg flex justify-evenly p-1'><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></p>
+                                            <p className='bg-[#f1c40e] rounded-bl-lg p-1'><Stars /></p>
                                         </div>
                                     </div>
                                 </div>
-                            )
-                        }
+                            </Link>
                         )
                     }
-                </div>
-            </Link>
+                    )
+                }
+            </div>
+
         </div>
     )
 }
