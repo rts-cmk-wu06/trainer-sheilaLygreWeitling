@@ -1,9 +1,6 @@
-import usePagination from '@mui/material/usePagination/usePagination';
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { AiFillStar } from "react-icons/ai";
-import { Link, useParams, } from 'react-router-dom';
-import SingleClassDetail from './SingleClassDetail';
+import { Link } from 'react-router-dom';
 import Stars from './Stars';
 
 

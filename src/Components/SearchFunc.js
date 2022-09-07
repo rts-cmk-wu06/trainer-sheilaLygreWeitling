@@ -63,15 +63,13 @@ const SearchFunc = () => {
                         <ul>
                             {
                                 classSearchResults.slice(0.2).map(({ classDay, classDescription, className, trainer, id }, index) => (
-                                    <Link to={`/class/${id}`}>
-                                        <li key={index} className='border-[#d4d4d4] border-[1px] rounded-full p-4 pl-12'>
-                                            <a key={index} href="">
-                                                <ul>
-                                                    <li>{classDay}</li>
-                                                    <li className='truncate'>{classDescription}</li>
-                                                    <li className='truncate'>{className}</li>
-                                                </ul>
-                                            </a>
+                                    <Link to={`/class/${id}`} key={index}>
+                                        <li className='border-[#d4d4d4] border-[1px] rounded-full p-4 pl-12'>
+                                            <ul>
+                                                <li>{classDay}</li>
+                                                <li className='truncate'>{classDescription}</li>
+                                                <li className='truncate'>{className}</li>
+                                            </ul>
                                         </li>
                                     </Link>
                                 ))
