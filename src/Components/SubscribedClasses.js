@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+
 
 const SubscribedClasses = () => {
 
     const [firstSubscribedClass, setFirstSubscribedClass] = useState([])
     const [secondSubscribedClass, setSecondSubscribedClass] = useState([])
+
 
     useEffect(() => {
         fetch('http://localhost:4000/api/v1/classes/3',
@@ -31,10 +34,12 @@ const SubscribedClasses = () => {
 
     return (
         <div>
+
             <div className='p-4 border m-4 rounded-lg'>
                 <h2 className='p-4'>{firstSubscribedClass.className}</h2>
                 <p className='p-4'>{firstSubscribedClass.classDay} - {firstSubscribedClass.classTime}</p>
             </div>
+
             <div className='p-4 border m-4 rounded-lg'>
                 <h2 className='p-4'>{secondSubscribedClass.className}</h2>
                 <p className='p-4'>{secondSubscribedClass.classDay} - {secondSubscribedClass.classTime}</p>
