@@ -48,10 +48,12 @@ const SingleClassDetail = () => {
                                     <BackArrow />
                                     <HeaderBurgerMenu />
                                 </div>
-                                <h1 className='font-bold text-[36px] text-[#f1c40e] mt-[250px]'>{groups.className}</h1>
+                                <h1 className='font-bold text-[36px] text-[#f1c40e] mt-[250px] pl-4'>{groups.className}</h1>
                                 <div className='flex p-12 justify-between items-center'>
                                     <div className='flex'>
-                                        <p className='text-[#f1c40e] pr-4'><Stars /></p>
+                                        <div className='text-[#f1c40e] pr-4'>
+                                            <Stars />
+                                        </div>
                                         <p className='text-[#f1c40e]' >5/5</p>
                                     </div>
                                     <div >
@@ -59,7 +61,7 @@ const SingleClassDetail = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='pl-4'>
+                            <div className='pl-4 pt-4'>
                                 <div className='font-medium pb-4'>
                                     <p>{groups.classDay} - {groups.classTime}</p>
                                 </div>

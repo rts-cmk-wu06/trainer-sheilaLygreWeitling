@@ -15,6 +15,7 @@ const Home = () => {
                         <h2 className='font-medium'>Popular classes</h2>
                         <HeaderBurgerMenu />
                     </div>
+
                     <div>
                         <HomeFirstClass />
                     </div>

@@ -32,26 +32,33 @@ const HomeMultipleClasses = () => {
 
             <div className='flex overflow-x-scroll overflow-hidden gap-8 p-5'>
                 {
-                    classes?.map(({ asset, url, className, id }, index) => {
-                        return (
-                            <Link to={`/class/${id}`}>
-                                <div className=''>
-                                    <div key={index} className='w-[150px] h-[150px] rounded-l-lg rounded-tr-lg'
-                                        style={{
-                                            backgroundImage: `url(${classes[index].asset.url})`,
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center'
-                                        }}>
-                                        <div>
-                                            <button className=' bg-[#f1c40e] truncate w-full p-1 mt-[103px] rounded-tr-lg'>{className}</button>
-                                            <p className='bg-[#f1c40e] rounded-bl-lg p-1'><Stars /></p>
+                    classes && classes?.map(({ asset, url, className, id }, index) => {
+
+                        if (asset !== null) {
+                            return (
+                                <Link to={`/class/${id}`} key={index}>
+                                    <div className=''>
+                                        <div className='w-[150px] h-[150px] rounded-l-lg rounded-tr-lg'
+                                            style={{
+                                                backgroundImage: `url(${classes[index].asset.url})`,
+                                                backgroundSize: 'cover',
+                                                backgroundPosition: 'center'
+                                            }}>
+                                            <div>
+                                                <button className=' bg-[#f1c40e] truncate w-full p-1 mt-[103px] rounded-tr-lg'>{className}</button>
+                                                <div className='bg-[#f1c40e] rounded-bl-lg p-1' >
+                                                    <Stars />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Link>
-                        )
+                                </Link>
+                            )
+
+                        }
                     }
                     )
+
                 }
             </div>
 
