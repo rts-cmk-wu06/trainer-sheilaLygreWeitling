@@ -8,7 +8,6 @@ const SearchFunc = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
-
     useEffect(() => {
         fetch('http://localhost:4000/api/v1/classes/',
             {
