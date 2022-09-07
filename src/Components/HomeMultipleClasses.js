@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Stars from './Stars';
 
-
 const HomeMultipleClasses = () => {
     const [classes, setClasses] = useState([]);
     const [randomClass, setRandomClass] = useState(0);
@@ -26,11 +25,9 @@ const HomeMultipleClasses = () => {
 
     return (
         <div >
-
             <div className='flex overflow-x-scroll overflow-hidden gap-8 p-5'>
                 {
                     classes && classes?.map(({ asset, url, className, id }, index) => {
-
                         if (asset !== null) {
                             return (
                                 <Link to={`/class/${id}`} key={index}>
@@ -51,14 +48,11 @@ const HomeMultipleClasses = () => {
                                     </div>
                                 </Link>
                             )
-
                         }
                     }
                     )
-
                 }
             </div>
-
         </div>
     )
 }

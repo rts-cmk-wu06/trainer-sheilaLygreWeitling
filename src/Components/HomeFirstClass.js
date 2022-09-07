@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Stars from './Stars';
 
-
 const HomeFirstClass = () => {
     const [allClasses, setAllClasses] = useState([]);
     let randomClass = []

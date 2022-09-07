@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Stars from './Stars';
 import BackArrow from './BackArrow';
 import HeaderBurgerMenu from './HeaderBurgerMenu';
@@ -90,11 +90,15 @@ const SingleClassDetail = () => {
                                     }
                                 </div>
                             </div>
+                            <Link to="/loginPage">
+                                <div>
+                                    <button className='text-[#000000]  m-4 px-[160px] py-4 bg-[#f1c40e] rounded-full'> SIGN UP </button>
+                                </div>
+                            </Link>
                         </div>
                         )
                     </div>
                 )
-
             }
         </div >
     )
