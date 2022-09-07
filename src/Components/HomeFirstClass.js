@@ -1,13 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { AiFillStar } from "react-icons/ai";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Stars from './Stars';
 
 
 const HomeFirstClass = () => {
     const [allClasses, setAllClasses] = useState([]);
-    /* const [randomClass, setRandomClass] = useState([]); */
     let randomClass = []
 
     allClasses.forEach(index => {
@@ -16,7 +14,6 @@ const HomeFirstClass = () => {
         }
     }
     )
-
 
     let random = Math.floor(Math.random() * randomClass.length);
 
@@ -33,8 +30,6 @@ const HomeFirstClass = () => {
     }
         , [])
 
-
-
     const randomImage = () => {
         return randomClass[random].asset.url;
     }
@@ -42,7 +37,6 @@ const HomeFirstClass = () => {
     const randomName = () => {
         return randomClass[random].className;
     }
-
 
     return (
         <div>
